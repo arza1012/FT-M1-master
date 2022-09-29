@@ -14,12 +14,12 @@ function BinarioADecimal(num) {
 function DecimalABinario(num) {
   // tu codigo acas
 
-  console.log(num)
+ 
   let result = [];
 
   while (num > 0){ 
     result.unshift(num % 2); 
-    console.log(num%2) 
+
     num = Math.floor(num / 2); 
   }
   
