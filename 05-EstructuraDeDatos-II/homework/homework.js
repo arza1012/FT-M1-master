@@ -118,10 +118,10 @@ class HashTable {
     this.numBuckets = 35;
   }
 
-  hash(input) {
+  hash(key) {
     let hash = 0
-    for (let i=0; i < input.length; i++) {
-      hash += input.charCodeAt(i)
+    for (let i=0; i < key.length; i++) {
+      hash += key.charCodeAt(i)
     }
     return hash % this.numBuckets
   };
@@ -133,23 +133,21 @@ class HashTable {
     let index = this.hash(key)
 
     if(!this.buckets[index]) {
-      this.buckets[index] = {}
+      this.buckets[index]
     }
-
     this.buckets[index][key] = value
   }
 
   get(key) {
-      console.log('key', key)
       let index = this.hash(key);
-      const valor = this.buckets[index]
-      return valor[key]
+      return this.buckets[index][key]
+      // return valor[key]
   }
+
   hasKey(key){
     let index = this.hash(key)
     return this.buckets[index].hasOwnProperty(key)
   }
-
 }
 
 //this.buckets.hasOwnProperty(key)

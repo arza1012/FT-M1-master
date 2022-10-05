@@ -64,7 +64,7 @@ class Queue {
   }
 
   enqueue(n) {
-    return this.array.push(n)
+    this.array.push(n)
   }
 
   dequeue() {
